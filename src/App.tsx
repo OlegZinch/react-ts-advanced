@@ -1,5 +1,12 @@
+import Input from './components/Input.tsx'
+
 function App() {
-  return <h1>Let's get started!</h1>
+  return (
+    <main>
+      <Input id='name' label='You name' />
+      <Input id='age' label='You age' />
+    </main>
+  )
 }
 
 export default App
