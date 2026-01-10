@@ -1,17 +1,13 @@
-// import Input from './components/Input.tsx'
-
 import Button from './components/Button.tsx'
 
 function App() {
   return (
     <main>
       <p>
-        <Button el='button'>A Button</Button>
+        <Button>A Button</Button>
       </p>
       <p>
-        <Button el='anchor' href='https://google.com'>
-          A Link
-        </Button>
+        <Button href='https://google.com'>A Link</Button>
       </p>
     </main>
   )

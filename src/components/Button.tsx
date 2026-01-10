@@ -1,15 +1,15 @@
 import type { ComponentPropsWithoutRef } from 'react'
 
-type ByttonProps = {
-  el: 'button'
-} & ComponentPropsWithoutRef<'button'>
+type ByttonProps = ComponentPropsWithoutRef<'button'> & { href?: never }
 
-type AnchorProps = {
-  el: 'anchor'
-} & ComponentPropsWithoutRef<'a'>
+type AnchorProps = ComponentPropsWithoutRef<'a'> & { href?: string }
+
+function isAnchorProps(props: ByttonProps | AnchorProps): props is AnchorProps {
+  return 'href' in props
+}
 
 function Button(props: ByttonProps | AnchorProps) {
-  if (props.el === 'anchor') {
+  if (isAnchorProps(props)) {
     return <a className='button' {...props}></a>
   }
 
