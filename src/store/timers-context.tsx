@@ -42,6 +42,27 @@ type Action = {
 }
 
 function timersReducer(state: TimersState, action: Action): TimersState {
+  if (action.type === 'START_TIMERS') {
+    return {
+      ...state,
+      isRunning: true,
+    }
+  }
+
+  if (action.type === 'STOP_TIMERS') {
+    return {
+      ...state,
+      isRunning: false,
+    }
+  }
+
+  if (action.type === 'ADD_TIMER') {
+    return {
+      ...state,
+      timers: [...state.timers, { name: 'Dummy', duration: 1 }],
+    }
+  }
+
   return state
 }
 
